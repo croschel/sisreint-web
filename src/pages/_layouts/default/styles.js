@@ -5,4 +5,7 @@ export const Wrapper = styled.div`
   height: 100%;
 `;
 
-export const Content = styled.div``;
+export const Content = styled.div`
+  width: 70%;
+  margin: 0 auto;
+`;
