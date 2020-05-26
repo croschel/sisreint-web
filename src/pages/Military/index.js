@@ -39,9 +39,9 @@ function Military() {
             <td>Mat Bel</td>
             <td>12/01/2012</td>
             <td>Adido Reintegrado</td>
-            <td><Link to="/"><img src={medical} alt="add treatment" /></Link></td>
+            <td><Link to="/treatment"><img src={medical} alt="add treatment" /></Link></td>
             <td><button type="button"><img src={view} alt="visualize" /></button></td>
-            <td><Link to="/"><img src={draw} alt="edit" /></Link></td>
+            <td><Link to="/edit_militaries"><img src={draw} alt="edit" /></Link></td>
             <td><button type="button"><img src={trash} alt="delete" /></button></td>
           </tr>
           <tr>
