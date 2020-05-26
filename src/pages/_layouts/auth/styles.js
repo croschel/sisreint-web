@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import user from '~/assets/avatar.svg';
 import password from '~/assets/communications.svg';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const Wrapper = styled.div`
   background: #184b10;
@@ -27,6 +29,11 @@ export const Content = styled.div`
     height: 470px;
     border-radius: 27px;
     padding: 20px;
+
+    span{
+      color: #AF1616;
+      margin-bottom: 10px;
+    }
   }
 
   img{
