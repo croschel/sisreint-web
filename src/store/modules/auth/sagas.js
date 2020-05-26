@@ -14,6 +14,7 @@ export function* signIn({ payload }) {
     });
 
     const { token, user } = response.data;
+    api.defaults.headers.Authorization = `Bearer ${token}`;
 
     yield put(signInSuccess(token, user));
     toast.success("Login realizado com sucesso")
@@ -31,7 +32,18 @@ export function signOut() {
   toast.success("Logout realizado com sucesso")
 }
 
+export function setToken({ payload }) {
+  if (!payload) return;
+
+  const { token } = payload.auth;
+
+  if (token) {
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+  }
+}
+
 export default all([
+  takeLatest('persist/REHYDRATE', setToken),
   takeLatest('@auth/SIGN_IN_REQUEST', signIn),
   takeLatest('@auth/SIGN_OUT', signOut)
 ])

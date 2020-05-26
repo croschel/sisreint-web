@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 import Route from '~/routes/Route';
 import SignIn from '~/pages/SignIn';
+import Profile from '~/pages/Profile';
 import Military from '~/pages/Military';
 import AddMilitary from '~/pages/Military/Add';
 import EditMilitary from '~/pages/Military/Edit';
@@ -14,6 +15,7 @@ export default function Routes() {
   return (
     <Switch>
       <Route path="/" exact component={SignIn} />
+      <Route path="/profile" component={Profile} isPrivate />
       <Route path="/militaries" component={Military} isPrivate />
       <Route path="/add_militaries" component={AddMilitary} isPrivate />
       <Route path="/edit_militaries" component={EditMilitary} isPrivate />

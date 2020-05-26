@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FiPlus } from 'react-icons/fi'
 import { Link } from 'react-router-dom';
 import medical from '~/assets/medical.svg';
@@ -6,8 +6,19 @@ import view from '~/assets/view.svg';
 import draw from '~/assets/draw.svg';
 import trash from '~/assets/trash.svg';
 import { Container, OptionsBox, MilitaryTable } from './styles';
+import api from '~/services/api';
 
 function Military() {
+
+  useEffect(() => {
+    async function loadMilitaries() {
+      const response = await api.get('militaries');
+      console.tron.log(response.data);
+    }
+    loadMilitaries();
+
+  }, []);
+
   return (
     <Container>
       <h2>MILITARES REINTEGRADOS</h2>

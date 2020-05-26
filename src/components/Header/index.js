@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import boina from '~/assets/fashion.png';
@@ -7,6 +7,7 @@ import { signOut } from '~/store/modules/auth/actions';
 import { Container, Content, LeftBox, TitleBox, NavBox, UserBox } from './styles';
 
 function Header() {
+  const user = useSelector(state => state.user.profile)
   const dispatch = useDispatch();
 
   function handleSignOut() {
@@ -30,8 +31,8 @@ function Header() {
         <UserBox>
           <img src={boina} alt="boina" />
           <div>
-            <p>1º Ten Roschel</p>
-            <Link to="/edit">editar perfil</Link>
+            <p>{`${user.posto_grad} ${user.nickname}`}</p>
+            <Link to="/profile">editar perfil</Link>
             <button onClick={handleSignOut}>sair do sistema</button>
           </div>
         </UserBox>
