@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiPlus } from 'react-icons/fi'
-
+import { Link } from 'react-router-dom';
 import medical from '~/assets/medical.svg';
 import view from '~/assets/view.svg';
 import draw from '~/assets/draw.svg';
@@ -18,7 +18,7 @@ function Military() {
           placeholder="Procure pelo nome de guerra"
           onChange={() => { }}
         />
-        <button><FiPlus size={70} color="#fff" /></button>
+        <Link to="/add_militaries"><FiPlus size={70} color="#fff" /></Link>
       </OptionsBox>
       <MilitaryTable>
         <thead>
@@ -39,10 +39,10 @@ function Military() {
             <td>Mat Bel</td>
             <td>12/01/2012</td>
             <td>Adido Reintegrado</td>
-            <td><img src={medical} alt="add treatment" /></td>
-            <td><img src={view} alt="visualize" /></td>
-            <td><img src={draw} alt="edit" /></td>
-            <td><img src={trash} alt="delete" /></td>
+            <td><Link to="/"><img src={medical} alt="add treatment" /></Link></td>
+            <td><button type="button"><img src={view} alt="visualize" /></button></td>
+            <td><Link to="/"><img src={draw} alt="edit" /></Link></td>
+            <td><button type="button"><img src={trash} alt="delete" /></button></td>
           </tr>
           <tr>
             <td>01</td>
@@ -51,10 +51,10 @@ function Military() {
             <td>Mat Bel</td>
             <td>12/01/2012</td>
             <td>Adido Reintegrado</td>
-            <td><img src={medical} alt="add treatment" /></td>
-            <td><img src={view} alt="visualize" /></td>
-            <td><img src={draw} alt="edit" /></td>
-            <td><img src={trash} alt="delete" /></td>
+            <td><Link to="/"><img src={medical} alt="add treatment" /></Link></td>
+            <td><button type="button"><img src={view} alt="visualize" /></button></td>
+            <td><Link to="/"><img src={draw} alt="edit" /></Link></td>
+            <td><button type="button"><img src={trash} alt="delete" /></button></td>
           </tr>
         </tbody>
       </MilitaryTable>
