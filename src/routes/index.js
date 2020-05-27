@@ -18,10 +18,10 @@ export default function Routes() {
       <Route path="/profile" component={Profile} isPrivate />
       <Route path="/militaries" component={Military} isPrivate />
       <Route path="/add_militaries" component={AddMilitary} isPrivate />
-      <Route path="/edit_militaries" component={EditMilitary} isPrivate />
+      <Route path="/edit_militaries/:id" component={EditMilitary} isPrivate />
       <Route path="/users" component={Users} isPrivate />
       <Route path="/add_users" component={AddUser} isPrivate />
-      <Route path="/edit_users" component={EditUser} isPrivate />
+      <Route path="/edit_users/:id" component={EditUser} isPrivate />
       <Route path="/reports" component={Reports} isPrivate />
     </Switch>
   );

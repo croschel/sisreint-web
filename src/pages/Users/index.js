@@ -1,22 +1,62 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import { FiPlus } from 'react-icons/fi'
 import { Link } from 'react-router-dom';
-import view from '~/assets/view.svg';
+import { confirmAlert } from 'react-confirm-alert';
 import draw from '~/assets/draw.svg';
 import trash from '~/assets/trash.svg';
 import { Container, OptionsBox, MilitaryTable } from './styles';
 import api from '~/services/api';
+import history from '~/services/history';
 
 function Users() {
   const [users, setUsers] = useState([]);
+  const [search, setSearch] = useState();
+  const [searchedUser, setSearchedUser] = useState([]);
+
 
   useEffect(() => {
     async function loadUsers() {
       const response = await api.get('users');
-      setUsers(response.data)
+      setUsers(response.data);
+      setSearchedUser(response.data);
     }
     loadUsers();
-  }, [users])
+  }, [])
+
+  useEffect(() => {
+    const result = users.filter(user =>
+      user.nickname.toLowerCase().includes(search)
+    );
+    setSearchedUser(result);
+  }, [search])
+
+  function handleEdit(user) {
+    history.push(`/edit_users/${user.id}`)
+  }
+
+  function handleDelete(user) {
+    async function deleteUser() {
+      await api.delete(`users/${user.id}`);
+      toast.success("Usuário deletado com sucesso")
+      window.location.reload(false);
+    }
+
+    confirmAlert({
+      title: 'Apagar usuário',
+      message: 'Tem certeza que deseja realizar essa operação?',
+      buttons: [
+        {
+          label: 'Sim',
+          onClick: () => deleteUser(),
+        },
+        {
+          label: 'Não',
+          onClick: () => { },
+        }
+      ]
+    })
+  }
 
   return (
     <Container>
@@ -26,7 +66,8 @@ function Users() {
           type="search"
           name="search"
           placeholder="Procure pelo nome de guerra"
-          onChange={() => { }}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
         />
         <Link to="/add_users"><FiPlus size={70} color="#fff" /></Link>
       </OptionsBox>
@@ -41,23 +82,23 @@ function Users() {
           </tr>
         </thead>
         <tbody>
-          {users.map(user => (
+          {searchedUser.map(user => (
             <tr>
               <td>{user.id}</td>
               <td>{user.posto_grad}</td>
               <td>{user.nickname}</td>
               <td>{user.email}</td>
               <td>{user.juridico ? 'Sim' : 'Não'}</td>
-              <td><button type="button"><img src={view} alt="visualize" /></button></td>
-              <td><Link to="/edit_users"><img src={draw} alt="edit" /></Link></td>
-              <td><button type="button"><img src={trash} alt="delete" /></button></td>
+              <td><button type="button" onClick={() => handleEdit(user)}><img src={draw} alt="edit" /></button></td>
+              <td><button type="button" onClick={() => handleDelete(user)}><img src={trash} alt="delete" /></button></td>
             </tr>
           ))}
 
         </tbody>
       </MilitaryTable>
 
-    </Container>
+
+    </Container >
   );
 }
 
