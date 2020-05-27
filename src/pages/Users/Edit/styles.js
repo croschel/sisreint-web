@@ -34,6 +34,8 @@ export const Container = styled.div`
         height: 38px;
         border-radius: 8px;
         border: none;
+        padding: 10px;
+        color: #777777;
       }
       select {
         width: 300px;
@@ -42,6 +44,8 @@ export const Container = styled.div`
         border: none;
         background: #fff;
         padding: 10px;
+        padding: 10px;
+        color: #777777;
       }
 
     }

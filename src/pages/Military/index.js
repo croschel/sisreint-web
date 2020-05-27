@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FiPlus } from 'react-icons/fi'
 import { Link } from 'react-router-dom';
 import medical from '~/assets/medical.svg';
@@ -9,11 +9,12 @@ import { Container, OptionsBox, MilitaryTable } from './styles';
 import api from '~/services/api';
 
 function Military() {
+  const [militaries, setMilitaries] = useState([]);
 
   useEffect(() => {
     async function loadMilitaries() {
       const response = await api.get('militaries');
-      console.tron.log(response.data);
+      setMilitaries(response.data);
     }
     loadMilitaries();
 
@@ -43,30 +44,21 @@ function Military() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>01</td>
-            <td>1º Ten</td>
-            <td>Roschel</td>
-            <td>Mat Bel</td>
-            <td>12/01/2012</td>
-            <td>Adido Reintegrado</td>
-            <td><Link to="/treatment"><img src={medical} alt="add treatment" /></Link></td>
-            <td><button type="button"><img src={view} alt="visualize" /></button></td>
-            <td><Link to="/edit_militaries"><img src={draw} alt="edit" /></Link></td>
-            <td><button type="button"><img src={trash} alt="delete" /></button></td>
-          </tr>
-          <tr>
-            <td>01</td>
-            <td>1º Ten</td>
-            <td>Roschel</td>
-            <td>Mat Bel</td>
-            <td>12/01/2012</td>
-            <td>Adido Reintegrado</td>
-            <td><Link to="/"><img src={medical} alt="add treatment" /></Link></td>
-            <td><button type="button"><img src={view} alt="visualize" /></button></td>
-            <td><Link to="/"><img src={draw} alt="edit" /></Link></td>
-            <td><button type="button"><img src={trash} alt="delete" /></button></td>
-          </tr>
+          {militaries.map(military => (
+            <tr>
+              <td>{military.id}</td>
+              <td>{military.posto_grad}</td>
+              <td>{military.nome}</td>
+              <td>{military.arma}</td>
+              <td>{military.data_praca}</td>
+              <td>{military.situacao}</td>
+              <td><Link to="/treatment"><img src={medical} alt="add treatment" /></Link></td>
+              <td><button type="button"><img src={view} alt="visualize" /></button></td>
+              <td><Link to="/edit_militaries"><img src={draw} alt="edit" /></Link></td>
+              <td><button type="button"><img src={trash} alt="delete" /></button></td>
+            </tr>
+          ))}
+
         </tbody>
       </MilitaryTable>
 

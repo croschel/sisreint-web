@@ -34,8 +34,12 @@ function EditUser() {
           </select>
         </div>
         <div>
-          <label htmlFor="process">PROCESSO:</label>
-          <Input name="process" />
+          <label htmlFor="password">SENHA:</label>
+          <Input name="password" />
+        </div>
+        <div>
+          <label htmlFor="password">CONFIRMAR SENHA:</label>
+          <Input name="password" />
         </div>
         <button type="submit">ATUALIZAR</button>
         <button type="button">CANCELAR</button>

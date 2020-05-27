@@ -5,6 +5,8 @@ export const Container = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   
   
   h2{
@@ -18,43 +20,55 @@ export const Container = styled.div`
   Form {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    margin: 0 45% 0 0;
 
     div {
       padding: 10px;
-      text-align: right;
-      margin: 0 150px 0 0;
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+      align-items: center;
 
       label {
-        margin: 0 5px;
+        margin-right: 5px;
         color: #fff;
         font-weight: bold;
+        width: auto;
+        text-align: right;
       }
       input {
-        width: 300px;
+        width: 50%;
         height: 38px;
         border-radius: 8px;
         border: none;
+        padding: 10px;
+        color: #777777;
       }
       select {
-        width: 300px;
+        width: 50%;
         height: 38px;
         border-radius: 8px;
         border: none;
         background: #fff;
         padding: 10px;
+        color: #777777;
+
       }
 
     }
+    
     button{
       width: 48%;
       border-radius: 8px;
       border:none;
       height: 48px;
-      margin: 20px 158px 0 auto;
+      margin: 10px 50%;
       color: #fff;
       font-weight: bold;
       font-size: 20px;
+      
     }
     button:first-of-type{
       background: #AEB11B;
