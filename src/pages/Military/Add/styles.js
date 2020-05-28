@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 90%;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -20,48 +21,51 @@ export const Container = styled.div`
     flex-direction: column;
     margin: 0 auto;
     width: 100%;
+    justify-content: center;
 
      #master {
-      text-align: right;
       display: flex;
-      margin: 0 auto 0 150px;
+      text-align: right;
+      justify-content: center;
+      margin: 0 auto 0 180px;
       
       > div{
         
         > div {
           padding: 0 0 10px 0;
-        }
-      }
 
-      label {
-        margin: 0 5px;
-        color: #fff;
-        font-weight: bold;
-        
-      }
-      input {
-        width: 250px;
-        height: 38px;
-        border-radius: 8px;
-        border: none;
-        padding: 10px;
-        color: #777777;
-      }
-      select {
-        width: 250px;
-        height: 38px;
-        border-radius: 8px;
-        border: none;
-        background: #fff;
-        padding: 10px;
-      }
+          label {
+            margin: 0 5px;
+            color: #fff;
+            font-weight: bold  
+          }
+          input {
+            width: 250px;
+            height: 38px;
+            border-radius: 8px;
+            border: none;
+            padding: 10px;
+            color: #777777;
+          }
+          select {
+            width: 250px;
+            height: 38px;
+            border-radius: 8px;
+            border: none;
+            background: #fff;
+            padding: 10px;
+          }
+            }
+          }
+
 
     }
     #form-bottom {
       text-align: right;
       display: flex;
       flex-direction: column;
-      margin: 0 auto 0 125px;
+      justify-content: center;
+      margin: 0 auto 0 155px;
 
       label {
         margin: 0 5px;
