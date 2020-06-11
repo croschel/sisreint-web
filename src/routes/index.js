@@ -6,6 +6,7 @@ import Profile from '~/pages/Profile';
 import Military from '~/pages/Military';
 import AddMilitary from '~/pages/Military/Add';
 import Treatment from '~/pages/Treatment';
+import AddTreatment from '~/pages/Treatment/Add';
 import EditMilitary from '~/pages/Military/Edit';
 import Users from '~/pages/Users';
 import AddUser from '~/pages/Users/Add';
@@ -18,7 +19,8 @@ export default function Routes() {
       <Route path="/" exact component={SignIn} />
       <Route path="/profile" component={Profile} isPrivate />
       <Route path="/militaries" component={Military} isPrivate />
-      <Route path="/treatment" component={Treatment} isPrivate />
+      <Route path="/treatment/:id" component={Treatment} isPrivate />
+      <Route path="/add_treatment/:id" component={AddTreatment} isPrivate />
       <Route path="/add_militaries" component={AddMilitary} isPrivate />
       <Route path="/edit_militaries/:id" component={EditMilitary} isPrivate />
       <Route path="/users" component={Users} isPrivate />

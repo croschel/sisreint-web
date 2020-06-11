@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import { FiPlus } from 'react-icons/fi'
+import { FiPlus } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
 import draw from '~/assets/draw.svg';
