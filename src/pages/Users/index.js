@@ -26,7 +26,7 @@ function Users() {
 
   useEffect(() => {
     const result = users.filter(user =>
-      user.nickname.toLowerCase().includes(search)
+      user.nickname.includes(search)
     );
     setSearchedUser(result);
   }, [search])
