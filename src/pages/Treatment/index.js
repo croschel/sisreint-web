@@ -26,6 +26,7 @@ function Treatment() {
     loadTreatments();
   }, [])
 
+
   function handleDelete(treatment) { }
 
   function handleView(treatment) {
@@ -43,7 +44,7 @@ function Treatment() {
         <input
           type="search"
           name="search"
-          placeholder="Procure pelo ano"
+          placeholder="Procure pelo mês"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -63,7 +64,7 @@ function Treatment() {
           {treatments.map(treatment => (
             <tr>
               <td>{treatment.id}</td>
-              <td>{treatment.mes_referencia}</td>
+              <td>{treatment.mes_referencia} / {treatment.ano_referencia}</td>
               <td>{dateCalendar(treatment.createdAt)}</td>
               <td>{treatment.ultima_apres}</td>
               <td>{treatment.prox_apres}</td>
