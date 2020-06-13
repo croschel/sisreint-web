@@ -95,3 +95,38 @@ export const TreatmentTable = styled.table`
   }
   
 `;
+
+export const ViewBox = styled.div` 
+  
+  display: ${props => props.visible ? 'flex' : 'none'};
+  background-color: #000;
+  margin: 0 auto;
+  box-shadow: 0 0 0 99999px rgba(0,0,0,0.6);
+
+#content{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  z-index: 1;
+  width: auto;
+  background-color: rgba(0,0,0,0.95);
+  border-radius: 12px;
+  padding: 20px;
+
+    & > div {
+      display: flex;
+      flex-direction: row;
+      margin: 10px;
+      color: #f1f1f1;
+      justify-content: space-between;
+      
+      p{
+        text-align: left;
+        margin-left: 20px;
+      }
+    }
+  }
+  
+`;

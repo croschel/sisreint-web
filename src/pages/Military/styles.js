@@ -110,9 +110,11 @@ export const ViewBox = styled.div`
   left: 35%;
   z-index: 1;
   width: auto;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.95);
   border-radius: 12px;
   padding: 20px;
+  box-shadow: 0 0 0 99999px rgba(0,0,0,0.6);
+  
 
     & > div {
       display: flex;

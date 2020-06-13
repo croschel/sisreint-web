@@ -38,6 +38,7 @@ function Military() {
 
   function handleEdit(military) {
     history.push(`/edit_militaries/${military.id}`)
+
   }
   function handleDelete(military) {
     async function deleteMilitary() {
@@ -45,9 +46,6 @@ function Military() {
       toast.success("Militar deletado com sucesso")
       window.location.reload(false);
     }
-
-
-
     confirmAlert({
       title: 'Apagar militar',
       message: 'Tem certeza que deseja realizar essa operação?',
