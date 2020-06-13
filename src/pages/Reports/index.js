@@ -18,7 +18,7 @@ function Reports() {
     }
     loadYears();
   }, [])
-  console.tron.log(mesReferencia, anoReferencia)
+
   return (
     <Container>
       <h2>Relatórios Mensais</h2>
