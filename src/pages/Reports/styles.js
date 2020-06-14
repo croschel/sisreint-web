@@ -6,7 +6,8 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
 
   h2{
     margin: 30px auto;

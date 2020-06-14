@@ -3,6 +3,8 @@ import lens from '~/assets/lens.svg';
 
 export const Container = styled.div`
   padding: 10px;
+  width: 70%;
+  margin: 0 auto;
 
   h2{
     margin: 30px auto;

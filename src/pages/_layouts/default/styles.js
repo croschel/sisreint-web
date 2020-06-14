@@ -6,6 +6,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
 `;

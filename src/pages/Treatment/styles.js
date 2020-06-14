@@ -3,6 +3,8 @@ import lens from '~/assets/lens.svg';
 
 export const Container = styled.div`
   padding: 10px;
+  width: 70%;
+  margin: 0 auto;
 
   h2{
     margin: 30px auto;
@@ -45,7 +47,7 @@ export const OptionsBox = styled.div`
 
 export const TreatmentTable = styled.table`
   width: 100%;
-  margin: 10px 0;
+  margin: 5px 0;
   vertical-align: center;
   text-align: center;
   border-collapse: separate;

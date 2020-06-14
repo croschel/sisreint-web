@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 90%;
+  width: 65%;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -76,11 +77,12 @@ export const Container = styled.div`
         border: none;
         margin-bottom: 10px;
         color: #777777;
+        padding: 10px;
       }
       
       }
     button{
-      width: 35%;
+      width: 30%;
       border-radius: 8px;
       border:none;
       height: 48px;

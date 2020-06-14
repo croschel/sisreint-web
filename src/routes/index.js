@@ -12,6 +12,8 @@ import Users from '~/pages/Users';
 import AddUser from '~/pages/Users/Add';
 import EditUser from '~/pages/Users/Edit';
 import Reports from '~/pages/Reports';
+import MilitaryReport from '~/pages/Reports/Militaries';
+import TreatmentsReport from '~/pages/Reports/Treatments';
 
 export default function Routes() {
   return (
@@ -27,6 +29,8 @@ export default function Routes() {
       <Route path="/add_users" component={AddUser} isPrivate />
       <Route path="/edit_users/:id" component={EditUser} isPrivate />
       <Route path="/reports" component={Reports} isPrivate />
+      <Route path="/militaries_report" component={MilitaryReport} isPrivate />
+      <Route path="/treatments_report" component={TreatmentsReport} isPrivate />
     </Switch>
   );
 }
