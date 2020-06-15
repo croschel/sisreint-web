@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Container, Header, HeaderImg, Content, MilitariesTable } from './styles';
+import { Container, Header, HeaderImg, Content, MilitariesTable, Signature } from './styles';
 import { useLocation } from 'react-router-dom';
 import brasao from '~/assets/brasao.png';
 import api from '~/services/api';
@@ -8,7 +8,7 @@ import api from '~/services/api';
 function Treatments() {
   const resp = useLocation();
   const { month, year } = resp.state.referencia;
-  console.tron.log(month, year);
+  const { commander } = resp.state;
   const [treatments, setTreatments] = useState([]);
 
   useEffect(() => {
@@ -66,6 +66,12 @@ function Treatments() {
 
           </tbody>
         </MilitariesTable>
+        <Signature>
+          <div>
+            <h2>{commander.name} - {commander.posto_grad}</h2>
+            <p>{commander.funcao}</p>
+          </div>
+        </Signature>
       </Content>
     </Container>
   );

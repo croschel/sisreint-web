@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-import { Container, Header, HeaderImg, Content, MilitariesTable } from './styles';
+import { Container, Header, HeaderImg, Content, MilitariesTable, Signature } from './styles';
 import brasao from '~/assets/brasao.png';
 import api from '~/services/api';
 
 function Militaries() {
+  const resp = useLocation();
+
+  const { commander } = resp.state;
 
   const [militaries, setMilitaries] = useState([]);
 
@@ -61,6 +65,12 @@ function Militaries() {
 
           </tbody>
         </MilitariesTable>
+        <Signature>
+          <div>
+            <h2>{commander.name} - {commander.posto_grad}</h2>
+            <p>{commander.funcao}</p>
+          </div>
+        </Signature>
       </Content>
     </Container>
   );

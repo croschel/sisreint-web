@@ -58,3 +58,18 @@ export const MilitariesTable = styled.table`
     }
   }
 `;
+
+export const Signature = styled.div`
+  text-align: center;
+  border-top: solid 1px #000;
+  width: 500px;
+  margin: 100px auto 0 auto;
+
+  h2{
+    margin-top: 3px;
+    font-size: 20px;
+  }
+  p{
+    font-size: 18px;
+  }
+`;
