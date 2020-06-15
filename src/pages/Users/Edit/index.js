@@ -22,7 +22,7 @@ function EditUser() {
     }
     loadInfoForm();
 
-  }, [])
+  }, [id])
   async function handleSubmit({ name, warname, email, oldPassword, password, confirmPassword }) {
     try {
       await api.put(`users/${id}`, {

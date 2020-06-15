@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
 import { Container, Header, HeaderImg, Content, MilitariesTable } from './styles';
-import { useLocation } from 'react-router-dom';
 import brasao from '~/assets/brasao.png';
 import api from '~/services/api';
 
 function Militaries() {
-  const resp = useLocation();
+
   const [militaries, setMilitaries] = useState([]);
 
   useEffect(() => {
@@ -49,7 +48,7 @@ function Militaries() {
               <tr>
                 <td>{military.om}</td>
                 <td>{military.posto_grad}</td>
-                <td>{military.ex_militar ? 'Ex-Militar' : military.posto_grad}</td>
+                <td>{military.ex_militar ? 'Ex-Militar' : military.arma}</td>
                 <td>{military.identidade}</td>
                 <td>{military.nome}</td>
                 <td>{military.data_nascimento}</td>

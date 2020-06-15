@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { FiPlus } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
+import { useSelector } from 'react-redux';
 import draw from '~/assets/draw.svg';
 import trash from '~/assets/trash.svg';
 
@@ -12,6 +13,7 @@ import api from '~/services/api';
 import history from '~/services/history';
 
 function Users() {
+
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState();
   const [searchedUser, setSearchedUser] = useState([]);

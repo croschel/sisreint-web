@@ -21,7 +21,7 @@ function EditMilitary() {
       setMilitary(response.data);
     }
     loadMilitaries();
-  }, [])
+  }, [id])
 
   async function handleSubmit({ idt, name, data_praca, process, cpf, especial, datanasc, publication, situation, historico, consequence }) {
     try {

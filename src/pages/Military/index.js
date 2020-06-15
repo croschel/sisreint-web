@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { confirmAlert } from 'react-confirm-alert';
 import { FiPlus } from 'react-icons/fi'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import $ from 'jquery';
 import medical from '~/assets/medical.svg';
 import view from '~/assets/view.svg';
@@ -15,6 +16,8 @@ import api from '~/services/api';
 import history from '~/services/history';
 
 function Military() {
+  const user = useSelector(state => state.user.profile);
+
   const [militaries, setMilitaries] = useState([]);
   const [militaryView, setMilitaryView] = useState({});
   const [visible, setVisible] = useState(false);
@@ -33,7 +36,7 @@ function Military() {
 
   useEffect(() => {
     const result = militaries.filter(military =>
-      military.nome.includes(search)
+      military.nome.toLowerCase().includes(search)
     );
     setSearchedMilitary(result);
   }, [search])
@@ -114,8 +117,8 @@ function Military() {
                 <td>{military.situacao}</td>
                 <td><button type="button" onClick={() => handleTreatment(military)}><img src={medical} alt="add treatment" /></button></td>
                 <td><button type="button" onClick={() => handleView(military)}><img src={view} alt="visualize" /></button></td>
-                <td><button type="button" onClick={() => handleEdit(military)}><img src={draw} alt="edit" /></button></td>
-                <td><button type="button" onClick={() => handleDelete(military)}><img src={trash} alt="delete" /></button></td>
+                <td><button type="button" onClick={() => handleDelete(military)}><img src={trash} alt="delete" style={{ display: user.juridico ? '' : 'none' }} /></button></td>
+                <td><button type="button" onClick={() => handleEdit(military)}><img src={draw} alt="edit" style={{ display: user.juridico ? '' : 'none' }} /></button></td>
               </tr>
             ))}
           </tbody>

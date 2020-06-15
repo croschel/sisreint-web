@@ -18,7 +18,7 @@ function Treatments() {
       console.tron.log(response.data);
     }
     loadTreatments();
-  }, [])
+  }, [month, year])
 
   return (
     <Container>
