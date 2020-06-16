@@ -18,7 +18,8 @@ function EditUser() {
     async function loadInfoForm() {
       const response = await api.get(`users/${id}`);
       setUser(response.data);
-
+      setGraduation(response.data.posto_grad);
+      setJuridic(response.data.juridico);
     }
     loadInfoForm();
 
@@ -65,7 +66,6 @@ function EditUser() {
           <div>
             <label htmlFor="graduation">POSTO/GRAD:</label>
             <select name="graduation" value={graduation} onChange={(e) => setGraduation(e.target.value)}>
-              <option value={user.posto_grad} selected="selected" >{user.posto_grad}</option>
               <option value="Cel">Cel</option>
               <option value="Ten Cel">Ten Cel</option>
               <option value="Maj">Maj</option>
@@ -88,7 +88,6 @@ function EditUser() {
           <div>
             <label htmlFor="juridico">JURÍDICO:</label>
             <select name="juridico" value={juridic} onChange={(e) => setJuridic(e.target.value)}>
-              <option value={user.juridico} selected="selected disabled hidden" >{user.juridico ? 'Sim' : 'Não'}</option>
               <option value={true}>Sim</option>
               <option value={false}>Não</option>
             </select>

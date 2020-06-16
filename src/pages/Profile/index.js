@@ -12,14 +12,10 @@ function Profile() {
   const user = useSelector(state => state.user.profile);
 
   const [graduation, setGraduation] = useState(user.posto_grad);
-  const [juridic, setJuridic] = useState(user.juridic);
+  const [juridic, setJuridic] = useState(user.juridico);
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
   const [nickname, setNickname] = useState(user.nickname);
-
-
-
-  //setClient(useSelector(state => state.user.profile))
 
   async function handleSubmit({ oldPassword, password, confirmPassword }) {
     try {
@@ -45,7 +41,6 @@ function Profile() {
     history.push("/users");
   }
 
-
   return (
     <>
       <Header />
@@ -63,7 +58,6 @@ function Profile() {
           <div>
             <label htmlFor="graduation">POSTO/GRAD:</label>
             <select name="graduation" value={graduation} onChange={(e) => setGraduation(e.target.value)}>
-              <option value={graduation} selected="selected" >{graduation}</option>
               <option value="Cel">Cel</option>
               <option value="Ten Cel">Ten Cel</option>
               <option value="Maj">Maj</option>
@@ -85,8 +79,7 @@ function Profile() {
           </div>
           <div>
             <label htmlFor="juridico">JURÍDICO:</label>
-            <select name="juridico" value={juridic} onChange={(e) => setJuridic(e.target.value)}>
-              <option value={juridic} selected="selected disabled hidden" >{juridic ? 'Sim' : 'Não'}</option>
+            <select disabled={juridic ? false : true} name="juridico" value={juridic} onChange={(e) => setJuridic(e.target.value)}>
               <option value={true}>Sim</option>
               <option value={false}>Não</option>
             </select>

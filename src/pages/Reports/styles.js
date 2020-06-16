@@ -6,7 +6,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
 
   h2{
@@ -17,10 +17,10 @@ export const Container = styled.div`
     text-shadow: 0px 0px 11px rgba(0,0,0,0.8);
   }
 
-  div {
+  #content {
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 35%;
     margin-top: 50px;
     margin-bottom: 80px;
 
@@ -44,7 +44,7 @@ export const Container = styled.div`
   button{
     padding: 20px;
     font-size: 24px;
-    width: 55%;
+    width: 40%;
     border: none;
     border-radius: 22px;
     margin-bottom: 40px;
@@ -69,9 +69,28 @@ export const Container = styled.div`
       transition-duration: 1s;
     }
   }
+  
+`;
+export const GroupUpdate = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  
+`;
+
+export const CommanderUpdate = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+
+
   #cmt-button{
     background: transparent;
-    width: 25%;
+    width: 35%;
     border: solid 1px #fff;
     box-shadow: 1px 1px 25px -2px rgba(0,0,0,0.75);
     margin-top: 8%;
@@ -84,7 +103,45 @@ export const Container = styled.div`
   }
   #update-button{
     background: transparent;
-    width: 25%;
+    width: 40%;
+    border: solid 1px #fff;
+    box-shadow: 1px 1px 25px -2px rgba(0,0,0,0.75);
+    margin-top: 8%;
+    margin-bottom: 2px;
+    text-align: center;
+  
+  
+    &:hover{
+      background: ${darken(0.15, '#bcbcbc')};
+      transition-duration: 1s;
+    }
+  }
+  
+`;
+
+export const S1Update = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+
+  #s1-button{
+    background: transparent;
+    width: 30%;
+    border: solid 1px #fff;
+    box-shadow: 1px 1px 25px -2px rgba(0,0,0,0.75);
+    margin-top: 8%;
+    margin-bottom: 2px;
+  
+    &:hover{
+      background: ${darken(0.15, '#bcbcbc')};
+      transition-duration: 1s;
+    }
+  }
+  #update-s1-button{
+    background: transparent;
+    width: 40%;
     border: solid 1px #fff;
     box-shadow: 1px 1px 25px -2px rgba(0,0,0,0.75);
     margin-top: 8%;
@@ -100,20 +157,24 @@ export const Container = styled.div`
 `;
 
 export const UpdateBox = styled.div`
-  width: 100%;
   display: flex;
+  margin-top: 10px;
 
   input{
-    width: 73%;
-    margin-right: 2%;
-    border-radius: 12px;
-    padding: 8px;
     font-size: 18px;
     color: #707070;
+    border-radius: 12px;
+    width: 400px;
+    padding: 10px;
+  }
+  select {
+      height: 50px;
+      font-size: 18px;
+      border-radius: 12px;
+      background: #fff;
+      color: #707070;
+      width: 25%;
+      padding: 10px;
 
-  }
-  select{
-    width: 20%;
-    color: #707070;
-  }
+    }
 `;

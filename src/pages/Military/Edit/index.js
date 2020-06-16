@@ -19,6 +19,9 @@ function EditMilitary() {
     async function loadMilitaries() {
       const response = await api.get(`militaries/${id}`);
       setMilitary(response.data);
+      setGraduation(response.data.posto_grad);
+      setExmilitar(response.data.ex_militar);
+      setUnidade(response.data.unidade);
     }
     loadMilitaries();
   }, [id])
@@ -70,7 +73,6 @@ function EditMilitary() {
               <div>
                 <label htmlFor="graduation">POSTO/GRAD:</label>
                 <select name="graduation" value={graduation} onChange={(e) => setGraduation(e.target.value)}>
-                  <option value={military.posto_grad} selected="selected disabled hidden" >{military.posto_grad}</option>
                   <option value="Cel">Cel</option>
                   <option value="Ten Cel">Ten Cel</option>
                   <option value="Maj">Maj</option>
@@ -89,7 +91,6 @@ function EditMilitary() {
               <div>
                 <label htmlFor="ex-militar">EX-MILITAR:</label>
                 <select name="ex-militar" value={exmilitar} onChange={(e) => setExmilitar(e.target.value)}>
-                  <option value={military.ex_militar} selected="selected disabled hidden">{military.ex_militar ? 'Sim' : 'Não'}</option>
                   <option value={true}>Sim</option>
                   <option value={false}>Não</option>
                 </select>
@@ -111,7 +112,6 @@ function EditMilitary() {
               <div>
                 <label htmlFor="om">OM:</label>
                 <select name="ex-militar" value={unidade} onChange={(e) => setUnidade(e.target.value)}>
-                  <option value="" selected="selected disabled hidden">Selecione</option>
                   <option value="2º B Log L">2º B Log L</option>
                 </select>
               </div>

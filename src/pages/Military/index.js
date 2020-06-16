@@ -117,8 +117,8 @@ function Military() {
                 <td>{military.situacao}</td>
                 <td><button type="button" onClick={() => handleTreatment(military)}><img src={medical} alt="add treatment" /></button></td>
                 <td><button type="button" onClick={() => handleView(military)}><img src={view} alt="visualize" /></button></td>
-                <td><button type="button" onClick={() => handleDelete(military)}><img src={trash} alt="delete" style={{ display: user.juridico ? '' : 'none' }} /></button></td>
                 <td><button type="button" onClick={() => handleEdit(military)}><img src={draw} alt="edit" style={{ display: user.juridico ? '' : 'none' }} /></button></td>
+                <td><button type="button" onClick={() => handleDelete(military)}><img src={trash} alt="delete" style={{ display: user.juridico ? '' : 'none' }} /></button></td>
               </tr>
             ))}
           </tbody>

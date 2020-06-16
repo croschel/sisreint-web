@@ -8,14 +8,13 @@ import api from '~/services/api';
 function Treatments() {
   const resp = useLocation();
   const { month, year } = resp.state.referencia;
-  const { commander } = resp.state;
+  const { s1 } = resp.state;
   const [treatments, setTreatments] = useState([]);
 
   useEffect(() => {
     async function loadTreatments() {
       const response = await api.get(`reports/?month=${month}&year=${year}`);
       setTreatments(response.data);
-      console.tron.log(response.data);
     }
     loadTreatments();
   }, [month, year])
@@ -68,8 +67,8 @@ function Treatments() {
         </MilitariesTable>
         <Signature>
           <div>
-            <h2>{commander.name} - {commander.posto_grad}</h2>
-            <p>{commander.funcao}</p>
+            <h2>{s1.name} - {s1.posto_grad}</h2>
+            <p>{s1.funcao}</p>
           </div>
         </Signature>
       </Content>

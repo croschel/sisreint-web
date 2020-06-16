@@ -16,7 +16,7 @@ function Header() {
     dispatch(signOut());
     return;
   }
-  console.tron.log(user.juridico)
+
   return (
     <Container>
       <Content>

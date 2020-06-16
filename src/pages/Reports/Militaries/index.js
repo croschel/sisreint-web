@@ -16,7 +16,7 @@ function Militaries() {
     async function loadMilitaries() {
       const response = await api.get('militaries');
       setMilitaries(response.data);
-      console.tron.log(response.data)
+
     }
     loadMilitaries();
   }, [])
