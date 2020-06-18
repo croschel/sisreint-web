@@ -3,7 +3,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
 export default createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+  
 
   * {
     margin: 0;
@@ -26,7 +26,7 @@ export default createGlobalStyle`
   }
 
   body,input,button {
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: sans-serif;
   }
 
   a{
