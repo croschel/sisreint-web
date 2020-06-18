@@ -33,6 +33,8 @@ function SignIn() {
           <button type="submit">ENTRAR</button>
         </Form>
       </div>
+      <p>Desenvolvido pelo 1º Ten Caique <strong>Roschel</strong></p>
+      <p>2º B Log L - Campinas</p>
 
 
     </>

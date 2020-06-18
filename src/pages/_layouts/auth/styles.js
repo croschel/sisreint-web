@@ -24,7 +24,7 @@ export const Content = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 50px auto;
+    margin: 50px auto 80px auto;
     width: 490px;
     height: 470px;
     border-radius: 27px;
@@ -103,5 +103,11 @@ export const Content = styled.div`
       font-weight: bold;
       font-size: 28px;
     }
+  }
+  p{
+    text-align:center;
+    margin-bottom: 5px;
+    color: #fff;
+    text-shadow: 0px 0px 14px rgba(0,0,0,0.8);
   }
   `;
